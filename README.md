@@ -1,24 +1,7 @@
 ### Install ROS Melodic
 
-```bash
-# enable all Ubuntu packages:
-$ sudo apt-add-repository universe
-$ sudo apt-add-repository multiverse
-$ sudo apt-add-repository restricted
-
-# add ROS repository to apt sources
-$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-$ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-
-# install ROS Base
-$ sudo apt-get update
-$ sudo apt-get install ros-melodic-ros-base
-
-# add ROS paths to environment
-sudo sh -c 'echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc'
-```
-
-Close and restart the terminal.
+http://wiki.ros.org/melodic/Installation/Ubuntu
+(install cuda if not installed)
 
 ### Create catkin workspace
 
@@ -48,24 +31,13 @@ $ echo $ROS_PACKAGE_PATH
 
 ### Testing lane and obstacle environment
 
-First open a new terminal, and start `roscore`
-```bash
-$ roscore
-```
-
-1. Obstacle environment
+Testing environments
 
 ```bash
-$ nano ~/workspace/jetbot_ws/src/jetbot_gazebo/launch/main.launch
-```
-Edit the world to `obstacle_land.world`
-
-2. Lane environment
-
-Edit the world to `lane.world`
-
-```bash
-$ roslaunch jetbot_gazebo main.launch
+# For obstacle environment
+$ roslaunch jetbot_gazebo obstacle_land.launch
+# For lane environment
+$ roslaunch jetbot_gazebo lane.launch
 ```
 this will load the environment and let you test both lane and obstacle environment
 
@@ -76,7 +48,7 @@ After you load the environment open a new terminal
 
 ```bash
 # install teleop_twist_keyboard
-$ sudo apt-get install ros-noetic-teleop-twist-keyboard
+$ sudo apt-get install ros-melodic-teleop-twist-keyboard
 # run teleop_twist_keyboard
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
