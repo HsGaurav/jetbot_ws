@@ -3,35 +3,22 @@
 http://wiki.ros.org/melodic/Installation/Ubuntu
 (install cuda if not installed)
 
-### Create catkin workspace
+### Make package
 
-Create a ROS Catkin workspace to contain our ROS packages:
+Extract the workspace and follow instructions
 
 ```bash
-# create the catkin workspace
-$ mkdir -p ~/workspace/jetbot_ws/src
-Clone packages
-$ git clone https://github.com/HsGaurav/jetbot_ws
-# paste both the folders in ~/workspace/jetbot_ws/src
-$ cd ~/workspace/jetbot_ws
+# move to the workspace
+$ cd jetbot_ws
 $ catkin_make
 
-# add jetbot_ws path to bashrc
-$ sudo sh -c 'echo "source ~/workspace/jetbot_ws/devel/setup.bash" >> ~/.bashrc'
-
-```
-> Note:  out of personal preference, my jetbot_ws is created as a subdirectory under ~/workspace
-
-Close and open a new terminal window.
-Verify that your jetbot_ws is visible to ROS:
-```bash
-$ echo $ROS_PACKAGE_PATH 
-/home/nvidia/workspace/jetbot_ws/src:/opt/ros/melodic/share
+Whenever you open a new terminal ensure that you source the package
+$ source {path to jetbot_ws}/jetbot_ws/devel/setup.bash
 ```
 
 ### Testing lane and obstacle environment
 
-Testing environments
+Before Testing environments extract `model_editor_models.zip` and copy the `unit_box_wall` `wallx` `wally` into  `~/.gazebo`
 
 ```bash
 # For obstacle environment
