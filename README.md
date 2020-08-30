@@ -58,11 +58,11 @@ $ roscore
 ```bash
 $ nano ~/workspace/jetbot_ws/src/jetbot_gazebo/launch/main.launch
 ```
-edit the world to obstacle_land.world
+Edit the world to `obstacle_land.world`
 
 2. Lane environment
 
-edit the world to lane.world
+Edit the world to `lane.world`
 
 ```bash
 $ roslaunch jetbot_gazebo main.launch
