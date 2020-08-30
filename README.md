@@ -3,6 +3,16 @@
 http://wiki.ros.org/melodic/Installation/Ubuntu
 (install cuda if not installed)
 
+### Install gazebo
+
+```bash
+# install default stable gazebo version
+$ sudo apt install gazebo9
+# install ros control package
+$ sudo apt install ros-melodic-gazebo-ros-control ros-melodic-controller-manager ros-melodic-joint-trajectory-controller ros-melodic-ros-control ros-melodic-ros-controllers
+```
+
+
 ### Make package
 
 Extract the workspace and follow instructions
@@ -22,11 +32,11 @@ Before Testing environments and move the folders `unit_box_wall` `wallx` `wally`
 
 ```bash
 # For obstacle environment
-$ roslaunch jetbot_gazebo obstacle_land.launch
+$ roslaunch jetbot_gazebo obstacle.launch
 # For lane environment
 $ roslaunch jetbot_gazebo lane.launch
 # For empty environment (only jetbot)
-$ roslaunch jetbot_gazebo main.launch
+$ roslaunch jetbot_gazebo gazebo.launch
 ```
 this will load the environment and let you test both lane and obstacle environment
 
@@ -41,17 +51,18 @@ $ sudo apt-get install ros-melodic-teleop-twist-keyboard
 # run teleop_twist_keyboard
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
-# After installing and running the teleop_twist_keyboard open a new terminal and run a python teleoperation file
-$ chmod +x ~/workspace/jetbot_ws/src/jetbot_gazebo/launch/subcmdvel.py
-$ roslaunch jetbot_gazebo subcmdvel.py
 ```
 
-Now to control the jetbot with keyboard click on the terminal where you executed teleop-twist-keyboard
-and use the following keys to control the bot
+Now to control the jetbot use the following controls on the terminal where you executed teleop-twist-keyboard
 ```bash
-i : forward
-j : left
-l : right
-, : reverse
-k/(anykey) : stop
+#---------------------------
+Moving around:
+   u    i    o
+   j    k    l
+   m    ,    .
+
+q/z : increase/decrease max speeds by 10%
+w/x : increase/decrease only linear speed by 10%
+e/c : increase/decrease only angular speed by 10%
+anything else : stop
 ```
