@@ -18,13 +18,15 @@ $ source {path to jetbot_ws}/jetbot_ws/devel/setup.bash
 
 ### Testing lane and obstacle environment
 
-Before Testing environments extract `model_editor_models.zip` and copy the `unit_box_wall` `wallx` `wally` into  `~/.gazebo`
+Before Testing environments and move the folders `unit_box_wall` `wallx` `wally` from `model_editor_models` into  `~/.gazebo` directory
 
 ```bash
 # For obstacle environment
 $ roslaunch jetbot_gazebo obstacle_land.launch
 # For lane environment
 $ roslaunch jetbot_gazebo lane.launch
+# For empty environment (only jetbot)
+$ roslaunch jetbot_gazebo main.launch
 ```
 this will load the environment and let you test both lane and obstacle environment
 
