@@ -44,7 +44,7 @@ Verify that your jetbot_ws is visible to ROS:
 ```bash
 $ echo $ROS_PACKAGE_PATH 
 /home/nvidia/workspace/jetbot_ws/src:/opt/ros/melodic/share
-
+```
 
 ### Testing lane and obstacle environment
 
