@@ -87,8 +87,10 @@ $ roslaunch jetbot_gazebo subcmdvel.py
 
 Now to control the jetbot with keyboard click on the terminal where you executed teleop-twist-keyboard
 and use the following keys to control the bot
-i = forward
-j = left
-l = right
-, = reverse
-k/(anykey) = stop
+```bash
+i : forward
+j : left
+l : right
+, : reverse
+k/(anykey) : stop
+```
